@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://thfvq6qwqiit"]
+
+[ext_resource type="Texture2D" uid="uid://cgqcmm0lhp7ru" path="res://Assets/Ranitayas Guns Pack (16+ pixelart guns)/Smgs/6smg06.png" id="1_gikqd"]
+
+[node name="smgs" type="Node2D"]
+
+[node name="gun2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_gikqd")

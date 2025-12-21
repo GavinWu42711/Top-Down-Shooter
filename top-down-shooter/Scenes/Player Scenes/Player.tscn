@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://btb0nb7hv05wc"]
+
+[ext_resource type="Script" uid="uid://khamj4fxbuq5" path="res://Scripts/player.gd" id="1_5ixxa"]
+[ext_resource type="Texture2D" uid="uid://cxvilrkhskb18" path="res://icon.svg" id="2_gntrk"]
+[ext_resource type="PackedScene" uid="uid://6goyt68gm6q" path="res://Scenes/Player Scenes/Cursor.tscn" id="6_nn08x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqav"]
+size = Vector2(42.666668, 43.55555)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_5ixxa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("2_gntrk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.357829e-07, -0.33332986)
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_rpqav")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.005, 3.005)
+limit_left = -176
+limit_top = -176
+limit_right = 192
+limit_bottom = 159
+
+[node name="Cursor" parent="." instance=ExtResource("6_nn08x")]
+position = Vector2(0, -57.333336)
+
+[node name="Guns" type="Node2D" parent="."]
+position = Vector2(23.999996, 0)

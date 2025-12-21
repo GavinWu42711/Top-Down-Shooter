@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://gonir41o32fp"]
+
+[ext_resource type="Texture2D" uid="uid://djyhgfrsfdmo3" path="res://Assets/Ranitayas Guns Pack (16+ pixelart guns)/SniperRifles/6SniperRifle06.png" id="1_xvahj"]
+
+[node name="gun" type="Node2D"]
+
+[node name="gun_sprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_xvahj")

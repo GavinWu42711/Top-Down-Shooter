@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://xt4v61y8xwad"]
+
+[ext_resource type="Texture2D" uid="uid://45gbdtqit7wx" path="res://Assets/Ranitayas Guns Pack (16+ pixelart guns)/AssaultRifles/7Assoultrifle07.png" id="2_3kpg8"]
+
+[node name="assault_rifles" type="Node2D"]
+
+[node name="gun2" type="Sprite2D" parent="."]
+texture = ExtResource("2_3kpg8")

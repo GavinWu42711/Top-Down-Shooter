@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://413daqwdwppr"]
+
+[ext_resource type="Texture2D" uid="uid://b00d0w0birkko" path="res://Assets/Ranitayas Guns Pack (16+ pixelart guns)/Shotguns/4Shotgun04.png" id="1_1xpfh"]
+
+[node name="shotguns" type="Node2D"]
+
+[node name="gun2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_1xpfh")
