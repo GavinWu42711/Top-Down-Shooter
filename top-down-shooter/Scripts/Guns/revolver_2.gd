@@ -1,6 +1,6 @@
 extends Node2D
 
-class_name assault_rifle_1
+class_name revolver_2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

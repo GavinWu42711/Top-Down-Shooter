@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cj1nirtk8kf1a"]
+[gd_scene load_steps=3 format=3 uid="uid://cj1nirtk8kf1a"]
 
 [ext_resource type="Texture2D" uid="uid://bdol2i1ps8ah1" path="res://Assets/Ranitayas Guns Pack (16+ pixelart guns)/Explosives/4Explosive04.png" id="1_a7fua"]
+[ext_resource type="Script" uid="uid://bo3u3u3n1ddh4" path="res://Scripts/Guns/explosive_1.gd" id="1_coqqx"]
 
-[node name="explosives" type="Node2D"]
+[node name="gun" type="Node2D"]
+script = ExtResource("1_coqqx")
 
-[node name="gun1" type="Sprite2D" parent="."]
+[node name="gun_sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_a7fua")

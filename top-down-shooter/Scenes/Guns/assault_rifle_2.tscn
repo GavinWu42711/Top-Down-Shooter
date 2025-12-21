@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://xt4v61y8xwad"]
+[gd_scene load_steps=3 format=3 uid="uid://xt4v61y8xwad"]
 
+[ext_resource type="Script" uid="uid://djvjjqduqd5xu" path="res://Scripts/Guns/assault_rifle_2.gd" id="1_x3sop"]
 [ext_resource type="Texture2D" uid="uid://45gbdtqit7wx" path="res://Assets/Ranitayas Guns Pack (16+ pixelart guns)/AssaultRifles/7Assoultrifle07.png" id="2_3kpg8"]
 
-[node name="assault_rifles" type="Node2D"]
+[node name="gun" type="Node2D"]
+script = ExtResource("1_x3sop")
 
-[node name="gun2" type="Sprite2D" parent="."]
+[node name="gun_sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_3kpg8")

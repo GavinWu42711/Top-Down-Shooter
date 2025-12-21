@@ -36,7 +36,7 @@ var taking_damage:bool = false
 var walking:bool = false
 
 func _ready() -> void:
-	equip_gun("pistol",0)
+	equip_gun("assault_rifle",0)
 
 func _physics_process(delta: float) -> void:
 	
@@ -106,10 +106,9 @@ func take_damage(damage_amount: int) -> void:
 	pass
 
 func handle_attack() -> void:
-	if Input.is_action_just_pressed("shoot"):
-		un_equip_gun("pistol",1)
-		#if Global.cursor_position != null:
-		#	gun.shoot(Global.cursor_position)
+	if Input.is_action_pressed("shoot"):
+		for gun in get_node("Guns").get_children():
+			gun.base_shot(Global.cursor_position)
 
 func equip_gun(gun_type:String, gun_index:int) -> void:
 	gun_equipped[gun_type][gun_index] = true
@@ -119,7 +118,70 @@ func equip_gun(gun_type:String, gun_index:int) -> void:
 	
 func un_equip_gun(gun_type:String, gun_index:int) -> void:
 	gun_equipped[gun_type][gun_index] = false
-	for gun in get_node("Guns").get_children():
-		print(gun.get_class())
-		if gun.is_class(gun_type + "_" + str(gun_index)):
-			gun.queue_free()
+	if gun_index == 0:
+		if gun_type == "assault_rifle":
+			for gun in get_node("Guns").get_children():
+				if gun is assault_rifle_1:
+					gun.queue_free()
+		if gun_type == "explosive":
+			for gun in get_node("Guns").get_children():
+				if gun is explosive_1:
+					gun.queue_free()
+		if gun_type == "machine_gun":
+			for gun in get_node("Guns").get_children():
+				if gun is machine_gun_1:
+					gun.queue_free()
+		if gun_type == "pistol":
+			for gun in get_node("Guns").get_children():
+				if gun is pistol_1:
+					gun.queue_free()
+		if gun_type == "revolver":
+			for gun in get_node("Guns").get_children():
+				if gun is revolver_1:
+					gun.queue_free()
+		if gun_type == "shotgun":
+			for gun in get_node("Guns").get_children():
+				if gun is shotgun_1:
+					gun.queue_free()
+		if gun_type == "smg":
+			for gun in get_node("Guns").get_children():
+				if gun is smg_1:
+					gun.queue_free()
+		if gun_type == "sniper_rifle":
+			for gun in get_node("Guns").get_children():
+				if gun is sniper_rifle_1:
+					gun.queue_free()
+	elif gun_index == 1:
+		if gun_type == "assault_rifle":
+			for gun in get_node("Guns").get_children():
+				if gun is assault_rifle_2:
+					gun.queue_free()
+		if gun_type == "explosive":
+			for gun in get_node("Guns").get_children():
+				if gun is explosive_2:
+					gun.queue_free()
+		if gun_type == "machine_gun":
+			for gun in get_node("Guns").get_children():
+				if gun is machine_gun_2:
+					gun.queue_free()
+		if gun_type == "pistol":
+			for gun in get_node("Guns").get_children():
+				if gun is pistol_2:
+					gun.queue_free()
+		if gun_type == "revolver":
+			for gun in get_node("Guns").get_children():
+				if gun is revolver_2:
+					gun.queue_free()
+		if gun_type == "shotgun":
+			for gun in get_node("Guns").get_children():
+				if gun is shotgun_2:
+					gun.queue_free()
+		if gun_type == "smg":
+			for gun in get_node("Guns").get_children():
+				if gun is smg_2:
+					gun.queue_free()
+		if gun_type == "sniper_rifle":
+			for gun in get_node("Guns").get_children():
+				if gun is sniper_rifle_2:
+					gun.queue_free()
+	

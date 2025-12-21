@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://nlxne8sjnhlj"]
+[gd_scene load_steps=3 format=3 uid="uid://nlxne8sjnhlj"]
 
 [ext_resource type="Texture2D" uid="uid://duaijx8vo35ed" path="res://Assets/Ranitayas Guns Pack (16+ pixelart guns)/Smgs/4smg04.png" id="1_cf52j"]
+[ext_resource type="Script" uid="uid://ltix6a7ik5md" path="res://Scripts/Guns/smg_1.gd" id="1_own0q"]
 
-[node name="smgs" type="Node2D"]
+[node name="gun" type="Node2D"]
+script = ExtResource("1_own0q")
 
-[node name="gun1" type="Sprite2D" parent="."]
+[node name="gun_sprite" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("1_cf52j")

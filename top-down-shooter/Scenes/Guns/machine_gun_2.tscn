@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5gpxs8dh8nc8"]
+[gd_scene load_steps=3 format=3 uid="uid://b5gpxs8dh8nc8"]
 
+[ext_resource type="Script" uid="uid://puypx2o07263" path="res://Scripts/Guns/machine_gun_2.gd" id="1_ckc7s"]
 [ext_resource type="Texture2D" uid="uid://0l84rfdc2l20" path="res://Assets/Ranitayas Guns Pack (16+ pixelart guns)/MachineGuns/6Machinegun06.png" id="1_ie61p"]
 
-[node name="machine_guns" type="Node2D"]
+[node name="gun" type="Node2D"]
+script = ExtResource("1_ckc7s")
 
-[node name="gun2" type="Sprite2D" parent="."]
+[node name="gun_sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_ie61p")

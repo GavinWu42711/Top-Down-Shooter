@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://s7c1h3lq747r"]
+[gd_scene load_steps=3 format=3 uid="uid://s7c1h3lq747r"]
 
+[ext_resource type="Script" uid="uid://bjokt80ntofh8" path="res://Scripts/Guns/revolver_2.gd" id="1_a3h7o"]
 [ext_resource type="Texture2D" uid="uid://be61x86sndlrd" path="res://Assets/Ranitayas Guns Pack (16+ pixelart guns)/Revolvers/2Revolver02.png" id="2_j6oi0"]
 
-[node name="revolvers" type="Node2D"]
+[node name="gun" type="Node2D"]
+script = ExtResource("1_a3h7o")
 
-[node name="gun2" type="Sprite2D" parent="."]
+[node name="gun_sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_j6oi0")
