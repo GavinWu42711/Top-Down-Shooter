@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x8u4bcev6mp1"
-path="res://.godot/imported/Small-8-Direction-Characters_by_AxulArt.png-1a61ff193dd47900871f594a57b5ea6d.ctex"
+uid="uid://d4a2wdrx6smuy"
+path="res://.godot/imported/wizard attack.png-35bbd250c61f4dc3ffac82390616ff5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Small-8-Direction-Characters_by_AxulArt/Small-8-Direction-Characters_by_AxulArt.png"
-dest_files=["res://.godot/imported/Small-8-Direction-Characters_by_AxulArt.png-1a61ff193dd47900871f594a57b5ea6d.ctex"]
+source_file="res://Assets/Wizard/wizard attack.png"
+dest_files=["res://.godot/imported/wizard attack.png-35bbd250c61f4dc3ffac82390616ff5e.ctex"]
 
 [params]
 
