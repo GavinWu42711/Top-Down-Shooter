@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://btb0nb7hv05wc"]
+[gd_scene load_steps=6 format=3 uid="uid://btb0nb7hv05wc"]
 
 [ext_resource type="Script" uid="uid://khamj4fxbuq5" path="res://Scripts/player.gd" id="1_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://cxvilrkhskb18" path="res://icon.svg" id="2_gntrk"]
+[ext_resource type="PackedScene" uid="uid://d3fdck01pw6ax" path="res://Scenes/Guns/Guns.tscn" id="4_biomh"]
 [ext_resource type="PackedScene" uid="uid://6goyt68gm6q" path="res://Scenes/Player Scenes/Cursor.tscn" id="6_nn08x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqav"]
@@ -30,5 +31,5 @@ limit_bottom = 159
 [node name="Cursor" parent="." instance=ExtResource("6_nn08x")]
 position = Vector2(0, -57.333336)
 
-[node name="Guns" type="Node2D" parent="."]
-position = Vector2(23.999996, 0)
+[node name="Guns" parent="." instance=ExtResource("4_biomh")]
+position = Vector2(22.666662, 0)

@@ -12,15 +12,20 @@ var reviving:bool = false
 var taking_damage:bool = false
 var walking:bool = false
 
+@onready var guns = $Guns
+
 func _ready() -> void:
-	pass
+	guns.equip_gun("assault_rifle",0)
 
 func _physics_process(delta: float) -> void:
 	
-	# Get the input direction and handle the movement/deceleration.
-	
+	#Player movement
 	handle_movement(delta)
+	
+	#Player animation
 	handle_animation()
+	
+	#Player attack
 	handle_attack()
 	
 	move_and_slide()
@@ -84,7 +89,6 @@ func take_damage(damage_amount: int) -> void:
 
 func handle_attack() -> void:
 	if Input.is_action_pressed("shoot"):
-		for gun in get_node("Guns").get_children():
-			gun.base_shot(Global.cursor_position)
+		guns.shoot(guns.global_position)
 
 	
