@@ -61,6 +61,12 @@ interact={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="wall_layer"
+2d_physics/layer_2="door_layer"
+2d_physics/layer_9="enemy_layer"
+
 [physics]
 
 2d/default_gravity=0.0

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://baujyagpu8xam"]
+
+[ext_resource type="Script" uid="uid://bi6hc5gq4o8yn" path="res://Scripts/Bullets/sniper_rifle_bullet_1.gd" id="1_sfe77"]
+[ext_resource type="Texture2D" uid="uid://cxvilrkhskb18" path="res://icon.svg" id="2_53u3a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hsu5"]
+
+[node name="SniperRifleBullet1" type="Node2D"]
+script = ExtResource("1_sfe77")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_53u3a")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_5hsu5")

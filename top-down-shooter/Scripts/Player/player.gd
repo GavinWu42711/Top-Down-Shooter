@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 const SPEED = 150.0
 
 #1 indicates looking right; -1 indicated looking left
@@ -11,25 +13,61 @@ var dying:bool = false
 var reviving:bool = false
 var taking_damage:bool = false
 var walking:bool = false
+
+var max_health:float = 9999999
+var min_health:float = 0
+var current_health:float = max_health
+
 @onready var point_of_rotation:Node2D = $PointOfRotation
 
 @onready var guns = $PointOfRotation/Guns
 
+var idk = [
+	["assault_rifle",0],
+	["assault_rifle",1],
+	["explosive",0],
+	["explosive",1],
+	["machine_gun",0],
+	["machine_gun",1],
+	["pistol",0],
+	["pistol",1],
+	["revolver",0],
+	["revolver",1],
+	["shotgun",0],
+	["shotgun",1],
+	["smg",0],
+	["smg",1],
+	["sniper_rifle",0],
+	["sniper_rifle",1],
+]
+
+var gun_equipped = 0
+
 func _ready() -> void:
-	guns.equip_gun("machine_gun",0)
+	guns.equip_gun(idk[gun_equipped][0],idk[gun_equipped][1])
 
 func _physics_process(delta: float) -> void:
 	
-	#Player movement
-	handle_movement(delta)
-	
-	#Player animation
-	handle_animation()
-	
-	#Player attack
-	handle_attack()
-	
-	move_and_slide()
+	if Global.player_alive:
+		Global.player_position = global_position
+		
+		#Player movement
+		handle_movement(delta)
+		
+		#Player animation
+		handle_animation()
+		
+		#Player attack
+		handle_attack()
+		
+		move_and_slide()
+		
+		if Input.is_action_just_pressed("interact"):
+			guns.unequip_gun(idk[gun_equipped][0],idk[gun_equipped][1])
+			gun_equipped = (gun_equipped + 1) % 16
+			guns.equip_gun(idk[gun_equipped][0],idk[gun_equipped][1])
+			
+		
 
 func handle_movement(delta:float) -> void:
 	var right:bool = Input.is_action_pressed("right")
@@ -86,10 +124,17 @@ func handle_animation() -> void:
 		point_of_rotation.look_at(Global.cursor_position)
 	
 func take_damage(damage_amount: int) -> void:
-	pass
+	current_health  -= damage_amount
+	if current_health <= min_health:
+		current_health = min_health
+		death()
 
 func handle_attack() -> void:
 	if Input.is_action_pressed("shoot"):
 		guns.shoot()
+
+func death() -> void:
+	Global.player_alive = false
+	pass
 
 	

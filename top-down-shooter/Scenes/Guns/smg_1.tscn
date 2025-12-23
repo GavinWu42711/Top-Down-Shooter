@@ -7,5 +7,4 @@
 script = ExtResource("1_own0q")
 
 [node name="gun_sprite" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("1_cf52j")

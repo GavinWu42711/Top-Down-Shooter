@@ -1,8 +1,6 @@
-extends Node2D
+extends Gun
 
 class_name assault_rifle_1
-
-var can_shoot:bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

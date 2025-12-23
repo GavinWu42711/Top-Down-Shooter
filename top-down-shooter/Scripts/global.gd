@@ -1,6 +1,9 @@
 extends Node
 
-var cursor_position
+var cursor_position:Vector2
+var player_position:Vector2
+var wave:int = 0
+var player_alive:bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

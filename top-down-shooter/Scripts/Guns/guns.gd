@@ -28,29 +28,29 @@ var gun_types:Array = ["assault_rifle", "explosive", "machine_gun", "pistol", "r
 var gun_modifiers:Dictionary = {
 	"assault_rifle":[
 	{
-		"shoot_cooldown" : 1,
-		"burst_delay":1,
+		"shoot_cooldown" : 0.5,
+		"burst_delay":0.05,
 		"burst_amount":3,
 		"shot_amount":1,
 		"shot_spread":1
 	},
 	{
-		"shoot_cooldown" : 1,
-		"burst_delay":1,
+		"shoot_cooldown" : 0.5,
+		"burst_delay":0.05,
 		"burst_amount":3,
 		"shot_amount":1,
 		"shot_spread":1
 	}],
 	"explosive":[
 	{
-		"shoot_cooldown" : 1,
+		"shoot_cooldown" : 2,
 		"burst_delay":0,
 		"burst_amount":1,
 		"shot_amount":1,
 		"shot_spread":1
 	},
 	{
-		"shoot_cooldown" : 1,
+		"shoot_cooldown" : 2,
 		"burst_delay":0,
 		"burst_amount":1,
 		"shot_amount":1,
@@ -58,14 +58,14 @@ var gun_modifiers:Dictionary = {
 	}],
 	"machine_gun":[
 	{
-		"shoot_cooldown" : 0.02,
+		"shoot_cooldown" : 0.04,
 		"burst_delay":0,
 		"burst_amount":1,
 		"shot_amount":1,
 		"shot_spread":1
 	},
 	{
-		"shoot_cooldown" : 1,
+		"shoot_cooldown" : 0.04,
 		"burst_delay":0,
 		"burst_amount":1,
 		"shot_amount":1,
@@ -73,14 +73,14 @@ var gun_modifiers:Dictionary = {
 	}],
 	"pistol":[
 	{
-		"shoot_cooldown" : 1,
+		"shoot_cooldown" : 0.25,
 		"burst_delay":0,
 		"burst_amount":1,
 		"shot_amount":1,
 		"shot_spread":1
 	},
 	{
-		"shoot_cooldown" : 1,
+		"shoot_cooldown" : 0.25,
 		"burst_delay":0,
 		"burst_amount":1,
 		"shot_amount":1,
@@ -88,29 +88,29 @@ var gun_modifiers:Dictionary = {
 	}],
 	"revolver":[
 	{
-		"shoot_cooldown" : 1,
-		"burst_delay":1,
+		"shoot_cooldown" : 1.5,
+		"burst_delay":0.02,
 		"burst_amount":6,
 		"shot_amount":1,
 		"shot_spread":1
 	},
 	{
-		"shoot_cooldown" : 1,
-		"burst_delay":1,
+		"shoot_cooldown" : 1.5,
+		"burst_delay":0.02,
 		"burst_amount":6,
 		"shot_amount":1,
 		"shot_spread":1
 	}],
 	"shotgun":[
 	{
-		"shoot_cooldown" : 1,
+		"shoot_cooldown" : 1.5,
 		"burst_delay":0,
 		"burst_amount":1,
 		"shot_amount":10,
 		"shot_spread":2
 	},
 	{
-		"shoot_cooldown" : 1,
+		"shoot_cooldown" : 1.5,
 		"burst_delay":0,
 		"burst_amount":1,
 		"shot_amount":10,
@@ -118,14 +118,14 @@ var gun_modifiers:Dictionary = {
 	}],
 	"smg":[
 	{
-		"shoot_cooldown" : 1,
+		"shoot_cooldown" : 0.1,
 		"burst_delay":0,
 		"burst_amount":1,
 		"shot_amount":1,
 		"shot_spread":1
 	},
 	{
-		"shoot_cooldown" : 1,
+		"shoot_cooldown" : 0.1,
 		"burst_delay":0,
 		"burst_amount":1,
 		"shot_amount":1,
@@ -133,14 +133,14 @@ var gun_modifiers:Dictionary = {
 	}],
 	"sniper_rifle":[
 	{
-		"shoot_cooldown" : 1,
+		"shoot_cooldown" : 3,
 		"burst_delay":0,
 		"burst_amount":1,
 		"shot_amount":1,
 		"shot_spread":1
 	},
 	{
-		"shoot_cooldown" : 1,
+		"shoot_cooldown" : 3,
 		"burst_delay":0,
 		"burst_amount":1,
 		"shot_amount":1,
@@ -162,172 +162,188 @@ var gun_modifiers:Dictionary = {
 var bullet_modifiers:Dictionary = {
 	"assault_rifle":[
 	{
-		"bullet_speed":100,
-		"bullet_damage":1,
+		"bullet_speed":300,
+		"bullet_damage":10,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
 		"bullet_temp_effects":[],
 		"bullet_perm_effects":[],
 		"bullet_size":1,
-		"bullet_lifespan":1.5
+		"bullet_lifespan":1.5,
+		"bullet_knockback":5.0
 		
 	},
 	{
-		"bullet_speed":1,
-		"bullet_damage":1,
+		"bullet_speed":300,
+		"bullet_damage":10,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
 		"bullet_temp_effects":[],
 		"bullet_perm_effects":[],
 		"bullet_size":1,
-		"bullet_lifespan":1.5
+		"bullet_lifespan":1.5,
+		"bullet_knockback":5.0
 	}],
 	"explosive":[
 	{
-		"bullet_speed":1,
-		"bullet_damage":1,
+		"bullet_speed":75,
+		"bullet_damage":20,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
 		"bullet_temp_effects":[],
 		"bullet_perm_effects":[],
-		"bullet_size":1,
-		"bullet_lifespan":1.5
+		"bullet_size":2,
+		"bullet_lifespan":1.5,
+		"bullet_knockback":5.0
 	},
 	{
-		"bullet_speed":1,
-		"bullet_damage":1,
+		"bullet_speed":75,
+		"bullet_damage":20,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
 		"bullet_temp_effects":[],
 		"bullet_perm_effects":[],
-		"bullet_size":1,
-		"bullet_lifespan":1.5
+		"bullet_size":2,
+		"bullet_lifespan":1.5,
+		"bullet_knockback":5.0
 	}],
 	"machine_gun":[
 	{
 		"bullet_speed":300,
-		"bullet_damage":1,
+		"bullet_damage":2.5,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
 		"bullet_temp_effects":[],
 		"bullet_perm_effects":[],
-		"bullet_size":1,
-		"bullet_lifespan":1.5
+		"bullet_size":0.5,
+		"bullet_lifespan":1.5,
+		"bullet_knockback":5.0
 	},
 	{
-		"bullet_speed":1,
-		"bullet_damage":1,
+		"bullet_speed":300,
+		"bullet_damage":2.5,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
 		"bullet_temp_effects":[],
 		"bullet_perm_effects":[],
-		"bullet_size":1,
-		"bullet_lifespan":1.5
+		"bullet_size":0.5,
+		"bullet_lifespan":1.5,
+		"bullet_knockback":5.0
 	}],
 	"pistol":[
 	{
-		"bullet_speed":1,
-		"bullet_damage":1,
+		"bullet_speed":300,
+		"bullet_damage":15,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
 		"bullet_temp_effects":[],
 		"bullet_perm_effects":[],
 		"bullet_size":1,
-		"bullet_lifespan":1.5
+		"bullet_lifespan":1.5,
+		"bullet_knockback":5.0
 	},
 	{
-		"bullet_speed":1,
-		"bullet_damage":1,
+		"bullet_speed":300,
+		"bullet_damage":15,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
 		"bullet_temp_effects":[],
 		"bullet_perm_effects":[],
 		"bullet_size":1,
-		"bullet_lifespan":1.5
+		"bullet_lifespan":1.5,
+		"bullet_knockback":5.0
 	}],
 	"revolver":[
 	{
-		"bullet_speed":1,
-		"bullet_damage":1,
+		"bullet_speed":400,
+		"bullet_damage":10,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
 		"bullet_temp_effects":[],
 		"bullet_perm_effects":[],
 		"bullet_size":1,
-		"bullet_lifespan":1.5
+		"bullet_lifespan":1.5,
+		"bullet_knockback":5.0
 	},
 	{
-		"bullet_speed":1,
-		"bullet_damage":1,
+		"bullet_speed":400,
+		"bullet_damage":10,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
 		"bullet_temp_effects":[],
 		"bullet_perm_effects":[],
 		"bullet_size":1,
-		"bullet_lifespan":1.5
+		"bullet_lifespan":1.5,
+		"bullet_knockback":5.0
 	}],
 	"shotgun":[
 	{
-		"bullet_speed":1,
-		"bullet_damage":1,
+		"bullet_speed":300,
+		"bullet_damage":5,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
 		"bullet_temp_effects":[],
 		"bullet_perm_effects":[],
-		"bullet_size":1,
-		"bullet_lifespan":1.5
+		"bullet_size":0.75,
+		"bullet_lifespan":1.5,
+		"bullet_knockback":5.0
 	},
 	{
-		"bullet_speed":1,
-		"bullet_damage":1,
+		"bullet_speed":300,
+		"bullet_damage":5,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
 		"bullet_temp_effects":[],
 		"bullet_perm_effects":[],
-		"bullet_size":1,
-		"bullet_lifespan":1.5
+		"bullet_size":0.75,
+		"bullet_lifespan":1.5,
+		"bullet_knockback":5.0
 	}],
 	"smg":[
 	{
-		"bullet_speed":1,
-		"bullet_damage":1,
+		"bullet_speed":300,
+		"bullet_damage":7.5,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
 		"bullet_temp_effects":[],
 		"bullet_perm_effects":[],
 		"bullet_size":1,
-		"bullet_lifespan":1.5
+		"bullet_lifespan":1.5,
+		"bullet_knockback":5.0
 	},
 	{
-		"bullet_speed":1,
-		"bullet_damage":1,
+		"bullet_speed":300,
+		"bullet_damage":7.5,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
 		"bullet_temp_effects":[],
 		"bullet_perm_effects":[],
 		"bullet_size":1,
-		"bullet_lifespan":1.5
+		"bullet_lifespan":1.5,
+		"bullet_knockback":5.0
 	}],
 	"sniper_rifle":[
 	{
-		"bullet_speed":1,
-		"bullet_damage":1,
+		"bullet_speed":400,
+		"bullet_damage":50,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
 		"bullet_temp_effects":[],
 		"bullet_perm_effects":[],
 		"bullet_size":1,
-		"bullet_lifespan":1.5
+		"bullet_lifespan":1.5,
+		"bullet_knockback":20
 	},
 	{
-		"bullet_speed":1,
-		"bullet_damage":1,
+		"bullet_speed":400,
+		"bullet_damage":50,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
 		"bullet_temp_effects":[],
 		"bullet_perm_effects":[],
 		"bullet_size":1,
-		"bullet_lifespan":1.5
+		"bullet_lifespan":1.5,
+		"bullet_knockback":20
 	}]
 }
 
@@ -352,225 +368,251 @@ func shoot() -> void:
 
 #Complete shot from each weapon
 func complete_shot(gun:Node2D) -> void:
-	if gun.can_shoot:
-		#Avoid bugs by automatically setting the ability to shoot as false
-		gun.can_shoot = false
+	if not gun.unequipping_gun:
+		if gun.can_shoot:
+			#Avoid bugs by automatically setting the ability to shoot as false
+			gun.can_shoot = false
+			gun.shooting = true
+					
+			if gun is assault_rifle_1:
+				var bullet_modifiers_dict = bullet_modifiers["assault_rifle"][0]
+				var gun_modifiers_dict = gun_modifiers["assault_rifle"][0]
+				for burst in range(gun_modifiers_dict["burst_amount"]):
+					handle_animation(gun)
+					for shot in range(gun_modifiers_dict["shot_amount"]):
+						base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"], bullet_modifiers_dict["bullet_knockback"] )
+					await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
+				await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
+				gun.can_shoot = true
 				
-		if gun is assault_rifle_1:
-			var bullet_modifiers_dict = bullet_modifiers["assault_rifle"][0]
-			var gun_modifiers_dict = gun_modifiers["assault_rifle"][0]
-			for burst in range(gun_modifiers_dict["burst_amount"]):
-				handle_animation(gun)
-				for shot in range(gun_modifiers_dict["shot_amount"]):
-					base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"] )
-				await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
-			await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
-			gun.can_shoot = true
+			elif gun is assault_rifle_2:
+				var bullet_modifiers_dict = bullet_modifiers["assault_rifle"][1]
+				var gun_modifiers_dict = gun_modifiers["assault_rifle"][1]
+				for burst in range(gun_modifiers_dict["burst_amount"]):
+					handle_animation(gun)
+					for shot in range(gun_modifiers_dict["shot_amount"]):
+						base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"], bullet_modifiers_dict["bullet_knockback"] )
+					await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
+				await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
+				gun.can_shoot = true
+				
+			elif gun is explosive_1:
+				var bullet_modifiers_dict = bullet_modifiers["explosive"][0]
+				var gun_modifiers_dict = gun_modifiers["explosive"][0]
+				for burst in range(gun_modifiers_dict["burst_amount"]):
+					handle_animation(gun)
+					for shot in range(gun_modifiers_dict["shot_amount"]):
+						base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"], bullet_modifiers_dict["bullet_knockback"] )
+					await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
+				await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
+				gun.can_shoot = true
+				
+			elif gun is explosive_2:
+				var bullet_modifiers_dict = bullet_modifiers["explosive"][1]
+				var gun_modifiers_dict = gun_modifiers["explosive"][1]
+				for burst in range(gun_modifiers_dict["burst_amount"]):
+					handle_animation(gun)
+					for shot in range(gun_modifiers_dict["shot_amount"]):
+						base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"], bullet_modifiers_dict["bullet_knockback"] )
+					await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
+				await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
+				gun.can_shoot = true
+				
+			elif gun is machine_gun_1:
+				var bullet_modifiers_dict = bullet_modifiers["machine_gun"][0]
+				var gun_modifiers_dict = gun_modifiers["machine_gun"][0]
+				for burst in range(gun_modifiers_dict["burst_amount"]):
+					handle_animation(gun)
+					for shot in range(gun_modifiers_dict["shot_amount"]):
+						base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"], bullet_modifiers_dict["bullet_knockback"] )
+					await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
+				await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
+				gun.can_shoot = true
+				
+			elif gun is machine_gun_2:
+				var bullet_modifiers_dict = bullet_modifiers["machine_gun"][1]
+				var gun_modifiers_dict = gun_modifiers["machine_gun"][1]
+				for burst in range(gun_modifiers_dict["burst_amount"]):
+					handle_animation(gun)
+					for shot in range(gun_modifiers_dict["shot_amount"]):
+						base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"], bullet_modifiers_dict["bullet_knockback"] )
+					await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
+				await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
+				gun.can_shoot = true
+				
+			elif gun is pistol_1:
+				var bullet_modifiers_dict = bullet_modifiers["pistol"][0]
+				var gun_modifiers_dict = gun_modifiers["pistol"][0]
+				for burst in range(gun_modifiers_dict["burst_amount"]):
+					handle_animation(gun)
+					for shot in range(gun_modifiers_dict["shot_amount"]):
+						base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"], bullet_modifiers_dict["bullet_knockback"] )
+					await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
+				await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
+				gun.can_shoot = true
+				
+			elif gun is pistol_2:
+				var bullet_modifiers_dict = bullet_modifiers["pistol"][1]
+				var gun_modifiers_dict = gun_modifiers["pistol"][1]
+				for burst in range(gun_modifiers_dict["burst_amount"]):
+					handle_animation(gun)
+					for shot in range(gun_modifiers_dict["shot_amount"]):
+						base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"], bullet_modifiers_dict["bullet_knockback"] )
+					await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
+				await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
+				gun.can_shoot = true
+				
+			elif gun is revolver_1:
+				var bullet_modifiers_dict = bullet_modifiers["revolver"][0]
+				var gun_modifiers_dict = gun_modifiers["revolver"][0]
+				for burst in range(gun_modifiers_dict["burst_amount"]):
+					handle_animation(gun)
+					for shot in range(gun_modifiers_dict["shot_amount"]):
+						base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"], bullet_modifiers_dict["bullet_knockback"] )
+					await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
+				await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
+				gun.can_shoot = true
+				
+			elif gun is revolver_2:
+				var bullet_modifiers_dict = bullet_modifiers["revolver"][1]
+				var gun_modifiers_dict = gun_modifiers["revolver"][1]
+				for burst in range(gun_modifiers_dict["burst_amount"]):
+					handle_animation(gun)
+					for shot in range(gun_modifiers_dict["shot_amount"]):
+						base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"], bullet_modifiers_dict["bullet_knockback"] )
+					await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
+				await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
+				gun.can_shoot = true
+				
+			elif gun is shotgun_1:
+				var bullet_modifiers_dict = bullet_modifiers["shotgun"][0]
+				var gun_modifiers_dict = gun_modifiers["shotgun"][0]
+				for burst in range(gun_modifiers_dict["burst_amount"]):
+					handle_animation(gun)
+					for shot in range(gun_modifiers_dict["shot_amount"]):
+						var offset:Vector2
+						offset.x = randi_range(-10,10)
+						offset.y = randi_range(-10,10)
+						var position_to_go_to:Vector2 = Global.cursor_position + offset
+						
+						base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"], bullet_modifiers_dict["bullet_knockback"] )
+					await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
+				await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
+				gun.can_shoot = true
+				
+			elif gun is shotgun_2:
+				var bullet_modifiers_dict = bullet_modifiers["shotgun"][1]
+				var gun_modifiers_dict = gun_modifiers["shotgun"][1]
+				for burst in range(gun_modifiers_dict["burst_amount"]):
+					handle_animation(gun)
+					for shot in range(gun_modifiers_dict["shot_amount"]):
+						base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"], bullet_modifiers_dict["bullet_knockback"] )
+					await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
+				await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
+				gun.can_shoot = true
+				
+			elif gun is smg_1:
+				var bullet_modifiers_dict = bullet_modifiers["smg"][0]
+				var gun_modifiers_dict = gun_modifiers["smg"][0]
+				for burst in range(gun_modifiers_dict["burst_amount"]):
+					handle_animation(gun)
+					for shot in range(gun_modifiers_dict["shot_amount"]):
+						base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"], bullet_modifiers_dict["bullet_knockback"] )
+					await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
+				await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
+				gun.can_shoot = true
+				
+			elif gun is smg_2:
+				var bullet_modifiers_dict = bullet_modifiers["smg"][1]
+				var gun_modifiers_dict = gun_modifiers["smg"][1]
+				for burst in range(gun_modifiers_dict["burst_amount"]):
+					handle_animation(gun)
+					for shot in range(gun_modifiers_dict["shot_amount"]):
+						base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"], bullet_modifiers_dict["bullet_knockback"] )
+					await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout
+				await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
+				gun.can_shoot = true
+				
+			elif gun is sniper_rifle_1:
+				var bullet_modifiers_dict = bullet_modifiers["sniper_rifle"][0]
+				var gun_modifiers_dict = gun_modifiers["sniper_rifle"][0]
+				for burst in range(gun_modifiers_dict["burst_amount"]):
+					handle_animation(gun)
+					for shot in range(gun_modifiers_dict["shot_amount"]):
+						base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"], bullet_modifiers_dict["bullet_knockback"] )
+					await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout
+				await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
+				gun.can_shoot = true
+				
+			elif gun is sniper_rifle_2:
+				var bullet_modifiers_dict = bullet_modifiers["sniper_rifle"][1]
+				var gun_modifiers_dict = gun_modifiers["sniper_rifle"][1]
+				for burst in range(gun_modifiers_dict["burst_amount"]):
+					handle_animation(gun)
+					for shot in range(gun_modifiers_dict["shot_amount"]):
+						base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"], bullet_modifiers_dict["bullet_knockback"])
+					await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout
+				await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
+				gun.can_shoot = true
 			
-		elif gun is assault_rifle_2:
-			var bullet_modifiers_dict = bullet_modifiers["assault_rifle"][1]
-			var gun_modifiers_dict = gun_modifiers["assault_rifle"][1]
-			for burst in range(gun_modifiers_dict["burst_amount"]):
-				handle_animation(gun)
-				for shot in range(gun_modifiers_dict["shot_amount"]):
-					base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"] )
-				await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
-			await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
-			gun.can_shoot = true
-			
-		elif gun is explosive_1:
-			var bullet_modifiers_dict = bullet_modifiers["explosive"][0]
-			var gun_modifiers_dict = gun_modifiers["explosive"][0]
-			for burst in range(gun_modifiers_dict["burst_amount"]):
-				handle_animation(gun)
-				for shot in range(gun_modifiers_dict["shot_amount"]):
-					base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"] )
-				await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
-			await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
-			gun.can_shoot = true
-			
-		elif gun is explosive_2:
-			var bullet_modifiers_dict = bullet_modifiers["explosive"][1]
-			var gun_modifiers_dict = gun_modifiers["explosive"][1]
-			for burst in range(gun_modifiers_dict["burst_amount"]):
-				handle_animation(gun)
-				for shot in range(gun_modifiers_dict["shot_amount"]):
-					base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"] )
-				await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
-			await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
-			gun.can_shoot = true
-			
-		elif gun is machine_gun_1:
-			var bullet_modifiers_dict = bullet_modifiers["machine_gun"][0]
-			var gun_modifiers_dict = gun_modifiers["machine_gun"][0]
-			for burst in range(gun_modifiers_dict["burst_amount"]):
-				handle_animation(gun)
-				for shot in range(gun_modifiers_dict["shot_amount"]):
-					base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"] )
-				await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
-			await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
-			gun.can_shoot = true
-			
-		elif gun is machine_gun_2:
-			var bullet_modifiers_dict = bullet_modifiers["machine_gun"][1]
-			var gun_modifiers_dict = gun_modifiers["machine_gun"][1]
-			for burst in range(gun_modifiers_dict["burst_amount"]):
-				handle_animation(gun)
-				for shot in range(gun_modifiers_dict["shot_amount"]):
-					base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"] )
-				await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
-			await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
-			gun.can_shoot = true
-			
-		elif gun is pistol_1:
-			var bullet_modifiers_dict = bullet_modifiers["pistol"][0]
-			var gun_modifiers_dict = gun_modifiers["pistol"][0]
-			for burst in range(gun_modifiers_dict["burst_amount"]):
-				handle_animation(gun)
-				for shot in range(gun_modifiers_dict["shot_amount"]):
-					base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"] )
-				await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
-			await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
-			gun.can_shoot = true
-			
-		elif gun is pistol_2:
-			var bullet_modifiers_dict = bullet_modifiers["pistol"][1]
-			var gun_modifiers_dict = gun_modifiers["pistol"][1]
-			for burst in range(gun_modifiers_dict["burst_amount"]):
-				handle_animation(gun)
-				for shot in range(gun_modifiers_dict["shot_amount"]):
-					base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"] )
-				await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
-			await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
-			gun.can_shoot = true
-			
-		elif gun is revolver_1:
-			var bullet_modifiers_dict = bullet_modifiers["revolver"][0]
-			var gun_modifiers_dict = gun_modifiers["revolver"][0]
-			for burst in range(gun_modifiers_dict["burst_amount"]):
-				handle_animation(gun)
-				for shot in range(gun_modifiers_dict["shot_amount"]):
-					base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"] )
-				await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
-			await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
-			gun.can_shoot = true
-			
-		elif gun is revolver_2:
-			var bullet_modifiers_dict = bullet_modifiers["revolver"][1]
-			var gun_modifiers_dict = gun_modifiers["revolver"][1]
-			for burst in range(gun_modifiers_dict["burst_amount"]):
-				handle_animation(gun)
-				for shot in range(gun_modifiers_dict["shot_amount"]):
-					base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"] )
-				await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
-			await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
-			gun.can_shoot = true
-			
-		elif gun is shotgun_1:
-			var bullet_modifiers_dict = bullet_modifiers["shotgun"][0]
-			var gun_modifiers_dict = gun_modifiers["shotgun"][0]
-			for burst in range(gun_modifiers_dict["burst_amount"]):
-				handle_animation(gun)
-				for shot in range(gun_modifiers_dict["shot_amount"]):
-					base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"] )
-				await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
-			await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
-			gun.can_shoot = true
-			
-		elif gun is shotgun_2:
-			var bullet_modifiers_dict = bullet_modifiers["shotgun"][1]
-			var gun_modifiers_dict = gun_modifiers["shotgun"][1]
-			for burst in range(gun_modifiers_dict["burst_amount"]):
-				handle_animation(gun)
-				for shot in range(gun_modifiers_dict["shot_amount"]):
-					base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"] )
-				await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
-			await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
-			gun.can_shoot = true
-			
-		elif gun is smg_1:
-			var bullet_modifiers_dict = bullet_modifiers["smg"][0]
-			var gun_modifiers_dict = gun_modifiers["smg"][0]
-			for burst in range(gun_modifiers_dict["burst_amount"]):
-				handle_animation(gun)
-				for shot in range(gun_modifiers_dict["shot_amount"]):
-					base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"] )
-				await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout				
-			await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
-			gun.can_shoot = true
-			
-		elif gun is smg_2:
-			var bullet_modifiers_dict = bullet_modifiers["smg"][1]
-			var gun_modifiers_dict = gun_modifiers["smg"][1]
-			for burst in range(gun_modifiers_dict["burst_amount"]):
-				handle_animation(gun)
-				for shot in range(gun_modifiers_dict["shot_amount"]):
-					base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"] )
-				await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout
-			await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
-			gun.can_shoot = true
-			
-		elif gun is sniper_rifle_1:
-			var bullet_modifiers_dict = bullet_modifiers["sniper_rifle"][0]
-			var gun_modifiers_dict = gun_modifiers["sniper_rifle"][0]
-			for burst in range(gun_modifiers_dict["burst_amount"]):
-				handle_animation(gun)
-				for shot in range(gun_modifiers_dict["shot_amount"]):
-					base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"] )
-				await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout
-			await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
-			gun.can_shoot = true
-			
-		elif gun is sniper_rifle_2:
-			var bullet_modifiers_dict = bullet_modifiers["sniper_rifle"][1]
-			var gun_modifiers_dict = gun_modifiers["sniper_rifle"][1]
-			for burst in range(gun_modifiers_dict["burst_amount"]):
-				handle_animation(gun)
-				for shot in range(gun_modifiers_dict["shot_amount"]):
-					base_shot(gun, gun.global_position, Global.cursor_position, bullet_modifiers_dict["bullet_damage"] * bullet_modifiers_dict["bullet_damage_multiplier"],  bullet_modifiers_dict["bullet_speed"] * bullet_modifiers_dict["bullet_speed_multiplier"], bullet_modifiers_dict["bullet_size"], bullet_modifiers_dict["bullet_perm_effects"], bullet_modifiers_dict["bullet_temp_effects"], bullet_modifiers_dict["bullet_lifespan"])
-				await get_tree().create_timer(gun_modifiers_dict["burst_delay"]).timeout
-			await get_tree().create_timer(gun_modifiers_dict["shoot_cooldown"]).timeout
-			gun.can_shoot = true
+			gun.shooting = false
+			gun.just_finished_shooting.emit()
 
 #Sets up singular shot for each variation of gun
 #Bullet_effect expects an array of an array; second array should begin with the bullet modifier and then the number of times to be applied
-func base_shot(gun:Node2D,bullet_start_point:Vector2, bullet_end_point:Vector2, bullet_damage:float = 1, bullet_speed:float = 1, bullet_size:float = 1, bullet_perm_effects:Array = [], bullet_temp_effects:Array = [], bullet_lifespan:float = 1.5) -> void:
+func base_shot(gun:Node2D,bullet_start_point:Vector2, bullet_end_point:Vector2, bullet_damage:float = 1, bullet_speed:float = 1, bullet_size:float = 1, bullet_perm_effects:Array = [], bullet_temp_effects:Array = [], bullet_lifespan:float = 1.5, bullet_knockback:float = 5) -> void:
 	#Make new bullet node
 	var bullet:CharacterBody2D = bullet_scene.instantiate()
 	
 	#Sets bullet type to instantiate the right sprite
 	if gun is assault_rifle_1:
-		bullet.bullet_type = "assault_rife_1"
+		bullet.bullet_type = "assault_rifle"
+		bullet.bullet_index = 0
 	elif gun is assault_rifle_2:
-		bullet.bullet_type = "assault_rifle_2"
+		bullet.bullet_type = "assault_rifle"
+		bullet.bullet_index = 1
 	elif gun is explosive_1:
-		bullet.bullet_type = "explosive_1"
+		bullet.bullet_type = "explosive"
+		bullet.bullet_index = 0
 	elif gun is explosive_2:
-		bullet.bullet_type = "explosive_2"
+		bullet.bullet_type = "explosive"
+		bullet.bullet_index = 1
 	elif gun is machine_gun_1:
-		bullet.bullet_type = "machine_gun_1"
+		bullet.bullet_type = "machine_gun"
+		bullet.bullet_index = 0
 	elif gun is machine_gun_2:
-		bullet.bullet_type = "machine_gun_2"
+		bullet.bullet_type = "machine_gun"
+		bullet.bullet_index = 1
 	elif gun is pistol_1:
-		bullet.bullet_type = "pistol_1"
+		bullet.bullet_type = "pistol"
+		bullet.bullet_index = 0
 	elif gun is pistol_2:
-		bullet.bullet_type = "pistol_2"
+		bullet.bullet_type = "pistol"
+		bullet.bullet_index = 1
 	elif gun is revolver_1:
-		bullet.bullet_type = "revolver_1"
+		bullet.bullet_type = "revolver"
+		bullet.bullet_index = 0
 	elif gun is revolver_2:
-		bullet.bullet_type = "revolver_2"
+		bullet.bullet_type = "revolver"
+		bullet.bullet_index = 1
 	elif gun is shotgun_1:
-		bullet.bullet_type = "shotgun_1"
+		bullet.bullet_type = "shotgun"
+		bullet.bullet_index = 0
 	elif gun is shotgun_2:
-		bullet.bullet_type = "shotgun_2"
+		bullet.bullet_type = "shotgun"
+		bullet.bullet_index = 1
 	elif gun is smg_1:
-		bullet.bullet_type = "smg_1"
+		bullet.bullet_type = "smg"
+		bullet.bullet_index = 0
 	elif gun is smg_2:
-		bullet.bullet_type = "smg_2"
+		bullet.bullet_type = "smg"
+		bullet.bullet_index = 1
 	elif gun is sniper_rifle_1:
-		bullet.bullet_type = "sniper_rifle_1"
+		bullet.bullet_type = "sniper_rifle"
+		bullet.bullet_index = 0
 	elif gun is sniper_rifle_2:
-		bullet.bullet_type = "sniper_rifle_2"
+		bullet.bullet_type = "sniper_rifle"
+		bullet.bullet_index = 1
 	
 	#Sets variables for the bullet
 	bullet.bullet_start_point = bullet_start_point
@@ -579,6 +621,7 @@ func base_shot(gun:Node2D,bullet_start_point:Vector2, bullet_end_point:Vector2, 
 	bullet.bullet_speed = bullet_speed
 	bullet.bullet_size = bullet_size
 	bullet.bullet_lifespan = bullet_lifespan
+	bullet.bullet_knockback = bullet_knockback
 	
 	for bullet_effect in bullet_perm_effects:
 		bullet.bullet_perm_effects[bullet_effect[0]] = bullet_effect[1]
@@ -600,71 +643,86 @@ func equip_gun(gun_type:String, gun_index:int) -> void:
 func unequip_gun(gun_type:String, gun_index:int) -> void:
 	if gun_index == 0:
 		if gun_type == "assault_rifle":
-			for gun in get_node("Guns").get_children():
+			for gun in self.get_children():
 				if gun is assault_rifle_1:
-					gun.queue_free()
+						gun.unequipping_gun = true
+						gun.remove()
 		if gun_type == "explosive":
-			for gun in get_node("Guns").get_children():
+			for gun in self.get_children():
 				if gun is explosive_1:
-					gun.queue_free()
+						gun.unequipping_gun = true
+						gun.remove()
 		if gun_type == "machine_gun":
-			for gun in get_node("Guns").get_children():
+			for gun in self.get_children():
 				if gun is machine_gun_1:
-					gun.queue_free()
+						gun.unequipping_gun = true
+						gun.remove()
 		if gun_type == "pistol":
-			for gun in get_node("Guns").get_children():
+			for gun in self.get_children():
 				if gun is pistol_1:
-					gun.queue_free()
+						gun.unequipping_gun = true
+						gun.remove()
 		if gun_type == "revolver":
-			for gun in get_node("Guns").get_children():
+			for gun in self.get_children():
 				if gun is revolver_1:
-					gun.queue_free()
+						gun.unequipping_gun = true
+						gun.remove()
 		if gun_type == "shotgun":
-			for gun in get_node("Guns").get_children():
+			for gun in self.get_children():
 				if gun is shotgun_1:
-					gun.queue_free()
+						gun.unequipping_gun = true
+						gun.remove()
 		if gun_type == "smg":
-			for gun in get_node("Guns").get_children():
+			for gun in self.get_children():
 				if gun is smg_1:
-					gun.queue_free()
+						gun.unequipping_gun = true
+						gun.remove()
 		if gun_type == "sniper_rifle":
-			for gun in get_node("Guns").get_children():
+			for gun in self.get_children():
 				if gun is sniper_rifle_1:
-					gun.queue_free()
+						gun.unequipping_gun = true
+						gun.remove()
 	elif gun_index == 1:
 		if gun_type == "assault_rifle":
-			for gun in get_node("Guns").get_children():
+			for gun in self.get_children():
 				if gun is assault_rifle_2:
-					gun.queue_free()
+						gun.unequipping_gun = true
+						gun.remove()
 		if gun_type == "explosive":
-			for gun in get_node("Guns").get_children():
+			for gun in self.get_children():
 				if gun is explosive_2:
-					gun.queue_free()
+						gun.unequipping_gun = true
+						gun.remove()
 		if gun_type == "machine_gun":
-			for gun in get_node("Guns").get_children():
+			for gun in self.get_children():
 				if gun is machine_gun_2:
-					gun.queue_free()
+						gun.unequipping_gun = true
+						gun.remove()
 		if gun_type == "pistol":
-			for gun in get_node("Guns").get_children():
+			for gun in self.get_children():
 				if gun is pistol_2:
-					gun.queue_free()
+						gun.unequipping_gun = true
+						gun.remove()
 		if gun_type == "revolver":
-			for gun in get_node("Guns").get_children():
+			for gun in self.get_children():
 				if gun is revolver_2:
-					gun.queue_free()
+						gun.unequipping_gun = true
+						gun.remove()
 		if gun_type == "shotgun":
-			for gun in get_node("Guns").get_children():
+			for gun in self.get_children():
 				if gun is shotgun_2:
-					gun.queue_free()
+						gun.unequipping_gun = true
+						gun.remove()
 		if gun_type == "smg":
-			for gun in get_node("Guns").get_children():
+			for gun in self.get_children():
 				if gun is smg_2:
-					gun.queue_free()
+						gun.unequipping_gun = true
+						gun.remove()
 		if gun_type == "sniper_rifle":
-			for gun in get_node("Guns").get_children():
+			for gun in self.get_children():
 				if gun is sniper_rifle_2:
-					gun.queue_free()
-
+						gun.unequipping_gun = true
+						gun.remove()
 #Increase speed of each bullet by a certain percentage. Use "all" to apply effect to all guns
 func add_bullet_speed(gun_type:String, gun_index:int, percent_increase:float) -> void:
 	if gun_type == "all":
@@ -709,3 +767,6 @@ func add_bullet_effect(gun_type:String, gun_index:int, effect:String, amount:int
 				bullet_modifiers[gun_type][i][effect] += amount
 	else:
 		bullet_modifiers[gun_type][gun_index][effect] += amount
+
+
+	

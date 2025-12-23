@@ -6,14 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://6goyt68gm6q" path="res://Scenes/Player Scenes/Cursor.tscn" id="6_nn08x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqav"]
-size = Vector2(42.666668, 43.55555)
+size = Vector2(46.22222, 47.111103)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.75, 0.75)
+collision_layer = 259
+collision_mask = 259
 script = ExtResource("1_5ixxa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6.357829e-07, -0.33332986)
+position = Vector2(-7.947286e-08, 1.0000027)
 scale = Vector2(0.75, 0.75)
 shape = SubResource("RectangleShape2D_rpqav")
 

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5uqrgayo07rx"]
+
+[ext_resource type="Script" uid="uid://b3ii0wq0mttq8" path="res://Scripts/Bullets/pistol_bullet_2.gd" id="1_nso3b"]
+[ext_resource type="Texture2D" uid="uid://cxvilrkhskb18" path="res://icon.svg" id="2_ovs71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hsu5"]
+
+[node name="PistolBullet2" type="Node2D"]
+script = ExtResource("1_nso3b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ovs71")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_5hsu5")
