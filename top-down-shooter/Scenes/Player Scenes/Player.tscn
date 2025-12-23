@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://btb0nb7hv05wc"]
 
-[ext_resource type="Script" uid="uid://khamj4fxbuq5" path="res://Scripts/player.gd" id="1_5ixxa"]
+[ext_resource type="Script" uid="uid://khamj4fxbuq5" path="res://Scripts/Player/player.gd" id="1_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://cxvilrkhskb18" path="res://icon.svg" id="2_gntrk"]
 [ext_resource type="PackedScene" uid="uid://d3fdck01pw6ax" path="res://Scenes/Guns/Guns.tscn" id="4_biomh"]
 [ext_resource type="PackedScene" uid="uid://6goyt68gm6q" path="res://Scenes/Player Scenes/Cursor.tscn" id="6_nn08x"]
@@ -11,10 +11,6 @@ size = Vector2(42.666668, 43.55555)
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.75, 0.75)
 script = ExtResource("1_5ixxa")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.255, 0.255)
-texture = ExtResource("2_gntrk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6.357829e-07, -0.33332986)
@@ -31,5 +27,11 @@ limit_bottom = 159
 [node name="Cursor" parent="." instance=ExtResource("6_nn08x")]
 position = Vector2(0, -57.333336)
 
-[node name="Guns" parent="." instance=ExtResource("4_biomh")]
+[node name="PointOfRotation" type="Node2D" parent="."]
+
+[node name="Guns" parent="PointOfRotation" instance=ExtResource("4_biomh")]
 position = Vector2(22.666662, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="PointOfRotation"]
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("2_gntrk")

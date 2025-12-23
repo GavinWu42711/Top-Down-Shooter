@@ -12,7 +12,7 @@ var reviving:bool = false
 var taking_damage:bool = false
 var walking:bool = false
 
-@onready var guns = $Guns
+@onready var guns = $PointOfRotation/Guns
 
 func _ready() -> void:
 	guns.equip_gun("assault_rifle",0)
@@ -89,6 +89,6 @@ func take_damage(damage_amount: int) -> void:
 
 func handle_attack() -> void:
 	if Input.is_action_pressed("shoot"):
-		guns.shoot(guns.global_position)
+		guns.shoot()
 
 	
