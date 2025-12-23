@@ -4,6 +4,8 @@ extends CharacterBody2D
 var bullet_speed:float = 1
 var bullet_damage:float = 1
 var bullet_size:float = 1
+var bullet_lifespan:float = 2
+var timer_started:bool = false
 var bullet_type:String
 var bullet_start_point:Vector2
 var bullet_end_point:Vector2
@@ -35,9 +37,17 @@ func _physics_process(delta: float) -> void:
 	handle_animation()
 	
 	move_and_slide()
+	
+	if not timer_started:
+		timer_started = true
+		timer()
 
 func handle_attack() -> void:
 	pass
 
 func handle_animation()-> void:
 	pass
+
+func timer() -> void:
+	await get_tree().create_timer(bullet_lifespan).timeout
+	self.queue_free()

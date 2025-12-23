@@ -15,7 +15,7 @@ var walking:bool = false
 @onready var guns = $PointOfRotation/Guns
 
 func _ready() -> void:
-	guns.equip_gun("assault_rifle",0)
+	guns.equip_gun("machine_gun",0)
 
 func _physics_process(delta: float) -> void:
 	
