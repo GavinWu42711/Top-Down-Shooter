@@ -341,8 +341,8 @@ func _process(delta: float) -> void:
 
 #Handles the animation of the gun
 func handle_animation(gun:Node2D) -> void:
-	print("animation")
-
+	pass
+	
 #Shoots all guns in slot
 func shoot() -> void:
 	var children = self.get_children()
@@ -355,9 +355,7 @@ func complete_shot(gun:Node2D) -> void:
 	if gun.can_shoot:
 		#Avoid bugs by automatically setting the ability to shoot as false
 		gun.can_shoot = false
-		
-		print(Global.cursor_position)
-		
+				
 		if gun is assault_rifle_1:
 			var bullet_modifiers_dict = bullet_modifiers["assault_rifle"][0]
 			var gun_modifiers_dict = gun_modifiers["assault_rifle"][0]

@@ -27,9 +27,7 @@ func _ready() -> void:
 	self.velocity.y = 0
 	self.velocity.x = cos(velocity_angle) * bullet_speed
 	self.velocity.y = sin(velocity_angle) * bullet_speed
-	
-	print(bullet_end_point)
-	
+		
 
 func _physics_process(delta: float) -> void:	
 	

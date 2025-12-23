@@ -11,6 +11,7 @@ var dying:bool = false
 var reviving:bool = false
 var taking_damage:bool = false
 var walking:bool = false
+@onready var point_of_rotation:Node2D = $PointOfRotation
 
 @onready var guns = $PointOfRotation/Guns
 
@@ -82,7 +83,7 @@ func handle_animation() -> void:
 	"""
 	
 	if Global.cursor_position != null:
-		self.look_at(Global.cursor_position)
+		point_of_rotation.look_at(Global.cursor_position)
 	
 func take_damage(damage_amount: int) -> void:
 	pass
