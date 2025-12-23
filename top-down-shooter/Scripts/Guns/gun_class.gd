@@ -6,20 +6,21 @@ var can_shoot:bool = true
 var unequipping_gun:bool = false
 var	shooting:bool = false
 
-signal just_finished_shooting
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.just_finished_shooting.connect(remove)
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if unequipping_gun:
-		can_shoot = false
-
+	pass
+	
 func remove() -> void:
 	unequipping_gun = true
-	if shooting == true:
+	if shooting:
 		pass
 	else:
 		self.queue_free()
+
+func check_status() -> void:
+	if unequipping_gun:
+		self.remove()
