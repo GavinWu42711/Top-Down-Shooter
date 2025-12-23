@@ -1,10 +1,5 @@
-extends Node
+extends Node2D
 
-var cursor_position:Vector2
-var player_position:Vector2
-var wave:int = 0
-var player_alive:bool = true
-var current_scene:String = "main_menu"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,3 +9,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_back_button_button_down() -> void:
+	Global.current_scene = "menu"
+	get_tree().change_scene_to_file("res://MainMenu.tscn")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cexjxmm4uk5eg"]
+
+[ext_resource type="Script" uid="uid://qkywrhpscjnm" path="res://settings.gd" id="1_x2hje"]
+
+[node name="Settings" type="Node2D"]
+script = ExtResource("1_x2hje")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 473.0
+offset_top = 58.0
+offset_right = 543.0
+offset_bottom = 89.0
+scale = Vector2(3, 3)
+text = "Back
+"
+
+[connection signal="button_down" from="BackButton" to="." method="_on_back_button_button_down"]

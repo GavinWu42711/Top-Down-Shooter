@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxr64c11pvgdd"]
+
+[ext_resource type="Script" uid="uid://qd4wej6y356b" path="res://main_menu.gd" id="1_i26rj"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_i26rj")
+
+[node name="SettingsButton" type="Button" parent="."]
+offset_left = 473.0
+offset_top = 484.0
+offset_right = 543.0
+offset_bottom = 515.0
+scale = Vector2(3, 3)
+text = "Settings"
+
+[node name="CreditsButton" type="Button" parent="."]
+offset_left = 473.0
+offset_top = 342.0
+offset_right = 543.0
+offset_bottom = 373.0
+scale = Vector2(3, 3)
+text = "Credits
+"
+
+[node name="TutorialButton" type="Button" parent="."]
+offset_left = 473.0
+offset_top = 200.0
+offset_right = 543.0
+offset_bottom = 231.0
+scale = Vector2(3, 3)
+text = "Tutorial"
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 473.0
+offset_top = 58.0
+offset_right = 543.0
+offset_bottom = 89.0
+scale = Vector2(3, 3)
+text = "Play
+"
+
+[node name="Background" type="Node2D" parent="."]
+
+[connection signal="button_down" from="SettingsButton" to="." method="_on_settings_button_button_down"]
+[connection signal="button_down" from="CreditsButton" to="." method="_on_credits_button_button_down"]
+[connection signal="button_down" from="TutorialButton" to="." method="_on_tutorial_button_button_down"]
+[connection signal="button_down" from="PlayButton" to="." method="_on_play_button_button_down"]

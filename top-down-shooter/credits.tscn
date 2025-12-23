@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp0qb61hwun8w"]
+
+[ext_resource type="Script" uid="uid://dajd0ok7f3rxa" path="res://credits.gd" id="1_nm7lk"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_nm7lk")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 473.0
+offset_top = 58.0
+offset_right = 543.0
+offset_bottom = 89.0
+scale = Vector2(3, 3)
+text = "Back
+"
+
+[connection signal="button_down" from="BackButton" to="." method="_on_back_button_button_down"]
