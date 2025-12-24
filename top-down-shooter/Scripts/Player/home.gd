@@ -19,4 +19,5 @@ func _process(delta: float) -> void:
 	
 func transition_to_battlefield() -> void:
 	transitioning = true
+	Global.current_scene = "battlefield"
 	get_tree().change_scene_to_file("res://Scenes/Map Scenes/Battlefield.tscn")

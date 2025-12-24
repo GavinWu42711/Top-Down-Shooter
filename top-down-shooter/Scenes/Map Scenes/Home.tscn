@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=4 uid="uid://cv41qqdfdqvtt"]
 
 [ext_resource type="Texture2D" uid="uid://besrmbfdvklsr" path="res://Assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="1_in1l6"]
-[ext_resource type="Script" uid="uid://c7262ufmtdyqf" path="res://Scenes/Map Scenes/home.gd" id="1_is34p"]
-[ext_resource type="Script" uid="uid://b5h0s5w51ek7f" path="res://Scenes/Map Scenes/doors.gd" id="2_in1l6"]
+[ext_resource type="Script" uid="uid://c7262ufmtdyqf" path="res://Scripts/Player/home.gd" id="1_is34p"]
+[ext_resource type="Script" uid="uid://b5h0s5w51ek7f" path="res://Scripts/Player/doors.gd" id="2_in1l6"]
 [ext_resource type="PackedScene" uid="uid://btb0nb7hv05wc" path="res://Scenes/Player Scenes/Player.tscn" id="2_iy2cc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_in1l6"]

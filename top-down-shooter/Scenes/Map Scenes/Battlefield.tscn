@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=4 uid="uid://dwrtif648kt1v"]
 
 [ext_resource type="Texture2D" uid="uid://besrmbfdvklsr" path="res://Assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="1_vipe1"]
-[ext_resource type="Script" uid="uid://bw38smq3cse6u" path="res://Scenes/Map Scenes/ground.gd" id="2_cd2mx"]
+[ext_resource type="Script" uid="uid://bw38smq3cse6u" path="res://Scripts/Player/ground.gd" id="2_cd2mx"]
 [ext_resource type="PackedScene" uid="uid://btb0nb7hv05wc" path="res://Scenes/Player Scenes/Player.tscn" id="2_mt8mt"]
 [ext_resource type="Script" uid="uid://bkagh5tbbvd1v" path="res://Scripts/Enemies/enemy_doors.gd" id="3_nu5l5"]
 [ext_resource type="Script" uid="uid://byw15flo3rj72" path="res://Scripts/Enemies/enemy_spawner.gd" id="5_nu5l5"]

@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Guns_handler
+
 #Gun sprites
 @onready var gun_scenes:Dictionary = {
 	"assault_rifle":[preload("res://Scenes/Guns/assaullt_rifle_1.tscn"),preload("res://Scenes/Guns/assault_rifle_2.tscn")],
@@ -159,6 +161,7 @@ var gun_modifiers:Dictionary = {
 	
 
 """
+
 var bullet_modifiers:Dictionary = {
 	"assault_rifle":[
 	{
@@ -166,8 +169,8 @@ var bullet_modifiers:Dictionary = {
 		"bullet_damage":10,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
-		"bullet_temp_effects":[],
-		"bullet_perm_effects":[],
+		"bullet_temp_effects":{},
+		"bullet_perm_effects":{},
 		"bullet_size":1,
 		"bullet_lifespan":1.5,
 		"bullet_knockback":5.0
@@ -178,8 +181,8 @@ var bullet_modifiers:Dictionary = {
 		"bullet_damage":10,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
-		"bullet_temp_effects":[],
-		"bullet_perm_effects":[],
+		"bullet_temp_effects":{},
+		"bullet_perm_effects":{},
 		"bullet_size":1,
 		"bullet_lifespan":1.5,
 		"bullet_knockback":5.0
@@ -190,8 +193,8 @@ var bullet_modifiers:Dictionary = {
 		"bullet_damage":20,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
-		"bullet_temp_effects":[],
-		"bullet_perm_effects":[],
+		"bullet_temp_effects":{},
+		"bullet_perm_effects":{},
 		"bullet_size":2,
 		"bullet_lifespan":1.5,
 		"bullet_knockback":5.0
@@ -201,8 +204,8 @@ var bullet_modifiers:Dictionary = {
 		"bullet_damage":20,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
-		"bullet_temp_effects":[],
-		"bullet_perm_effects":[],
+		"bullet_temp_effects":{},
+		"bullet_perm_effects":{},
 		"bullet_size":2,
 		"bullet_lifespan":1.5,
 		"bullet_knockback":5.0
@@ -213,8 +216,8 @@ var bullet_modifiers:Dictionary = {
 		"bullet_damage":2.5,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
-		"bullet_temp_effects":[],
-		"bullet_perm_effects":[],
+		"bullet_temp_effects":{},
+		"bullet_perm_effects":{},
 		"bullet_size":0.5,
 		"bullet_lifespan":1.5,
 		"bullet_knockback":5.0
@@ -224,8 +227,8 @@ var bullet_modifiers:Dictionary = {
 		"bullet_damage":2.5,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
-		"bullet_temp_effects":[],
-		"bullet_perm_effects":[],
+		"bullet_temp_effects":{},
+		"bullet_perm_effects":{},
 		"bullet_size":0.5,
 		"bullet_lifespan":1.5,
 		"bullet_knockback":5.0
@@ -236,8 +239,8 @@ var bullet_modifiers:Dictionary = {
 		"bullet_damage":15,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
-		"bullet_temp_effects":[],
-		"bullet_perm_effects":[],
+		"bullet_temp_effects":{},
+		"bullet_perm_effects":{},
 		"bullet_size":1,
 		"bullet_lifespan":1.5,
 		"bullet_knockback":5.0
@@ -247,8 +250,8 @@ var bullet_modifiers:Dictionary = {
 		"bullet_damage":15,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
-		"bullet_temp_effects":[],
-		"bullet_perm_effects":[],
+		"bullet_temp_effects":{},
+		"bullet_perm_effects":{},
 		"bullet_size":1,
 		"bullet_lifespan":1.5,
 		"bullet_knockback":5.0
@@ -259,8 +262,8 @@ var bullet_modifiers:Dictionary = {
 		"bullet_damage":10,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
-		"bullet_temp_effects":[],
-		"bullet_perm_effects":[],
+		"bullet_temp_effects":{},
+		"bullet_perm_effects":{},
 		"bullet_size":1,
 		"bullet_lifespan":1.5,
 		"bullet_knockback":5.0
@@ -270,8 +273,8 @@ var bullet_modifiers:Dictionary = {
 		"bullet_damage":10,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
-		"bullet_temp_effects":[],
-		"bullet_perm_effects":[],
+		"bullet_temp_effects":{},
+		"bullet_perm_effects":{},
 		"bullet_size":1,
 		"bullet_lifespan":1.5,
 		"bullet_knockback":5.0
@@ -282,8 +285,8 @@ var bullet_modifiers:Dictionary = {
 		"bullet_damage":5,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
-		"bullet_temp_effects":[],
-		"bullet_perm_effects":[],
+		"bullet_temp_effects":{},
+		"bullet_perm_effects":{},
 		"bullet_size":0.75,
 		"bullet_lifespan":1.5,
 		"bullet_knockback":5.0
@@ -293,8 +296,8 @@ var bullet_modifiers:Dictionary = {
 		"bullet_damage":5,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
-		"bullet_temp_effects":[],
-		"bullet_perm_effects":[],
+		"bullet_temp_effects":{},
+		"bullet_perm_effects":{},
 		"bullet_size":0.75,
 		"bullet_lifespan":1.5,
 		"bullet_knockback":5.0
@@ -305,8 +308,8 @@ var bullet_modifiers:Dictionary = {
 		"bullet_damage":7.5,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
-		"bullet_temp_effects":[],
-		"bullet_perm_effects":[],
+		"bullet_temp_effects":{},
+		"bullet_perm_effects":{},
 		"bullet_size":1,
 		"bullet_lifespan":1.5,
 		"bullet_knockback":5.0
@@ -316,8 +319,8 @@ var bullet_modifiers:Dictionary = {
 		"bullet_damage":7.5,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
-		"bullet_temp_effects":[],
-		"bullet_perm_effects":[],
+		"bullet_temp_effects":{},
+		"bullet_perm_effects":{},
 		"bullet_size":1,
 		"bullet_lifespan":1.5,
 		"bullet_knockback":5.0
@@ -328,8 +331,8 @@ var bullet_modifiers:Dictionary = {
 		"bullet_damage":50,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
-		"bullet_temp_effects":[],
-		"bullet_perm_effects":[],
+		"bullet_temp_effects":{},
+		"bullet_perm_effects":{},
 		"bullet_size":1,
 		"bullet_lifespan":1.5,
 		"bullet_knockback":20
@@ -339,17 +342,25 @@ var bullet_modifiers:Dictionary = {
 		"bullet_damage":50,
 		"bullet_speed_multiplier":1,
 		"bullet_damage_multiplier":1,
-		"bullet_temp_effects":[],
-		"bullet_perm_effects":[],
+		"bullet_temp_effects":{},
+		"bullet_perm_effects":{},
 		"bullet_size":1,
 		"bullet_lifespan":1.5,
 		"bullet_knockback":20
 	}]
 }
 
+signal upgrade_bullet_stat(gun_type:String, gun_index:int, modifier:String, amount:float)
+signal upgrade_gun_stat(gun_type:String, gun_index:int, modifier:String, amount:float)
+signal upgrade_bullet_temp_effect(gun_type:String, gun_index:int, modifier:String, amount:float)
+signal upgrade_bullet_perm_effect(gun_type:String, gun_index:int, modifier:String, amount:float)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	upgrade_bullet_stat.connect(apply_bullet_stat_upgrade)
+	upgrade_gun_stat.connect(apply_gun_stat_upgrade)
+	upgrade_bullet_temp_effect.connect(apply_temp_effect_upgrade)
+	upgrade_bullet_perm_effect.connect(apply_perm_effect_upgrade)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -453,8 +464,7 @@ func complete_shot(gun:Gun) -> void:
 				gun.can_shoot = true
 			
 #Sets up singular shot for each variation of gun
-#Bullet_effect expects an array of an array; second array should begin with the bullet modifier and then the number of times to be applied
-func base_shot(gun:Node2D,bullet_start_point:Vector2, bullet_end_point:Vector2, bullet_damage:float = 1, bullet_speed:float = 1, bullet_size:float = 1, bullet_perm_effects:Array = [], bullet_temp_effects:Array = [], bullet_lifespan:float = 1.5, bullet_knockback:float = 5) -> void:
+func base_shot(gun:Node2D,bullet_start_point:Vector2, bullet_end_point:Vector2, bullet_damage:float = 1, bullet_speed:float = 1, bullet_size:float = 1, bullet_perm_effects:Dictionary = {}, bullet_temp_effects:Dictionary = {}, bullet_lifespan:float = 1.5, bullet_knockback:float = 5) -> void:
 	#Make new bullet node
 	var bullet:CharacterBody2D = bullet_scene.instantiate()
 	
@@ -517,11 +527,9 @@ func base_shot(gun:Node2D,bullet_start_point:Vector2, bullet_end_point:Vector2, 
 	bullet.bullet_lifespan = bullet_lifespan
 	bullet.bullet_knockback = bullet_knockback
 	
-	for bullet_effect in bullet_perm_effects:
-		bullet.bullet_perm_effects[bullet_effect[0]] = bullet_effect[1]
+	bullet.bullet_perm_effects = bullet_perm_effects
 	
-	for bullet_effect in bullet_temp_effects:
-		bullet.bullet_temp_effects[bullet_effect[0]] = bullet_effect[1]
+	bullet.bullet_temp_effects = bullet_temp_effects
 		
 	get_node("/root").add_child(bullet)
 	#gun.add_child(bullet)
@@ -602,50 +610,59 @@ func unequip_gun(gun_type:String, gun_index:int) -> void:
 				if gun is sniper_rifle_2:
 						gun.remove()
 						
-#Increase speed of each bullet by a certain percentage. Use "all" to apply effect to all guns
-func add_bullet_speed(gun_type:String, gun_index:int, percent_increase:float) -> void:
+#Applies an upgrade to the bullet with the specified modifier
+func apply_bullet_stat_upgrade(gun_type:String, gun_index:int, modifier:String, amount:int) -> void:
 	if gun_type == "all":
 		for gun in gun_types:
 			for i in range(2):
-				bullet_modifiers[gun_type][i]["bullet_speed_multiplier"] += (percent_increase / 100)
+				bullet_modifiers[gun_type][i][modifier] += amount
 	else:
-		bullet_modifiers[gun_type][gun_index]["bullet_speed_multiplier"] += (percent_increase / 100)
-
-#Increase the damage of each shot by a certain percentage. Use "all" to apply effect to all guns
-func add_damage(gun_type:String, gun_index:int, percent_increase:float) -> void:
+		bullet_modifiers[gun_type][gun_index][modifier] += amount
+		
+#Applies an upgrade to the gun with the specified modifier
+func apply_gun_stat_upgrade(gun_type:String, gun_index:int, modifier:String, amount:int) -> void:
 	if gun_type == "all":
 		for gun in gun_types:
 			for i in range(2):
-				bullet_modifiers[gun_type][i]["bullet_damage_multiplier"] += (percent_increase / 100)
+				gun_modifiers[gun_type][i][modifier] += amount
 	else:
-		bullet_modifiers[gun_type][gun_index]["bullet_damage_multiplier"] += (percent_increase / 100)
-
-#Decrease the interval between each shot by a certain percentage. Use "all" to apply effect to all guns
-func decrease_shoot_cooldown(gun_type:String, gun_index:int, percent_decrease:float) -> void:
+		gun_modifiers[gun_type][gun_index][modifier] += amount
+		
+#Applies a unique temp effect to the gun with the specified modifier
+func apply_temp_effect_upgrade(gun_type:String, gun_index:int, modifier:String, amount:int) -> void:
 	if gun_type == "all":
 		for gun in gun_types:
 			for i in range(2):
-				bullet_modifiers[gun_type][i]["shot_cooldown"] -= (percent_decrease / 100)
+				var m_dict:Dictionary = bullet_modifiers[gun_type][i]["bullet_temp_effects"]
+				if m_dict.get(modifier):
+					bullet_modifiers[gun_type][i]["bullet_temp_effects"][modifier] += amount
+				else:
+					bullet_modifiers[gun_type][i]["bullet_temp_effects"][modifier] = amount
 	else:
-		bullet_modifiers[gun_type][gun_index]["shot_cooldown"] -= (percent_decrease / 100)
-
-#Adds a special effect to the gun. Use "all" to apply effect to all guns
-func add_gun_effect(gun_type:String, gun_index:int, effect:String, amount:int) -> void:
+		var m_dict:Dictionary = bullet_modifiers[gun_type][gun_index]["bullet_temp_effects"]
+		if m_dict.get(modifier):
+			bullet_modifiers[gun_type][gun_index]["bullet_temp_effects"][modifier] += amount
+		else:
+			bullet_modifiers[gun_type][gun_index]["bullet_temp_effects"][modifier] = amount
+	
+#Applies a unique perm effect to the gun with the specified modifier
+func apply_perm_effect_upgrade(gun_type:String, gun_index:int, modifier:String, amount:int) -> void:
 	if gun_type == "all":
 		for gun in gun_types:
 			for i in range(2):
-				bullet_modifiers[gun_type][i][effect] += amount
+				var m_dict:Dictionary = bullet_modifiers[gun_type][i]["bullet_perm_effects"]
+				if m_dict.get(modifier):
+					bullet_modifiers[gun_type][i]["bullet_perm_effects"][modifier] += amount
+				else:
+					bullet_modifiers[gun_type][i]["bullet_perm_effects"][modifier] = amount
 	else:
-		bullet_modifiers[gun_type][gun_index][effect] += amount
+		var m_dict:Dictionary = bullet_modifiers[gun_type][gun_index]["bullet_perm_effects"]
+		if m_dict.get(modifier):
+			bullet_modifiers[gun_type][gun_index]["bullet_perm_effects"][modifier] += amount
+		else:
+			bullet_modifiers[gun_type][gun_index]["bullet_perm_effects"][modifier] = amount
 
-#Adds a special effect to the bullet of the gun. Use "all" to apply effect to all guns.
-func add_bullet_effect(gun_type:String, gun_index:int, effect:String, amount:int) -> void:
-	if gun_type == "all":
-		for gun in gun_types:
-			for i in range(2):
-				bullet_modifiers[gun_type][i][effect] += amount
-	else:
-		bullet_modifiers[gun_type][gun_index][effect] += amount
 
+		
 
 	
