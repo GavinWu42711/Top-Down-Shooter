@@ -22,6 +22,8 @@ var current_health:float = max_health
 
 @onready var guns = $PointOfRotation/Guns
 
+@onready var camera:Camera2D = $Camera2D
+
 var idk = [
 	["assault_rifle",0],
 	["assault_rifle",1],
@@ -45,6 +47,18 @@ var gun_equipped = 0
 
 func _ready() -> void:
 	guns.equip_gun(idk[gun_equipped][0],idk[gun_equipped][1])
+	
+	var camera_limits:Node2D = get_node("/root/Node2D").get_node("CameraLimits")
+	
+	if camera_limits:
+		camera.limit_enabled = true
+		camera.limit_left = camera_limits.get_node("LeftLimit").global_position.x
+		camera.limit_right = camera_limits.get_node("RightLimit").global_position.x
+		camera.limit_bottom = camera_limits.get_node("BottomLimit").global_position.y
+		camera.limit_top = camera_limits.get_node("TopLimit").global_position.y
+		print("test")
+	else:
+		camera.limit_enabled = false
 
 func _physics_process(delta: float) -> void:
 	

@@ -387,18 +387,18 @@ sources/0 = SubResource("TileSetAtlasSource_xukim")
 visible = false
 enabled = false
 
-[node name="Camera_limits" type="Node2D" parent="."]
+[node name="CameraLimits" type="Node2D" parent="."]
 
-[node name="Marker2D" type="Marker2D" parent="Camera_limits"]
+[node name="TopLimit" type="Marker2D" parent="CameraLimits"]
 position = Vector2(0, -176)
 
-[node name="Marker2D3" type="Marker2D" parent="Camera_limits"]
+[node name="BottomLimit" type="Marker2D" parent="CameraLimits"]
 position = Vector2(0, 159)
 
-[node name="Marker2D2" type="Marker2D" parent="Camera_limits"]
+[node name="LeftLimit" type="Marker2D" parent="CameraLimits"]
 position = Vector2(-176, 0)
 
-[node name="Marker2D4" type="Marker2D" parent="Camera_limits"]
+[node name="RightLimit" type="Marker2D" parent="CameraLimits"]
 position = Vector2(192, 0)
 
 [node name="Tile_map" type="Node2D" parent="."]

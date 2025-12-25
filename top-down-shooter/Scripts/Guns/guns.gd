@@ -615,7 +615,7 @@ func apply_bullet_stat_upgrade(gun_type:String, gun_index:int, modifier:String, 
 	if gun_type == "all":
 		for gun in gun_types:
 			for i in range(2):
-				bullet_modifiers[gun_type][i][modifier] += amount
+				bullet_modifiers[gun][i][modifier] += amount
 	else:
 		bullet_modifiers[gun_type][gun_index][modifier] += amount
 		
@@ -624,7 +624,7 @@ func apply_gun_stat_upgrade(gun_type:String, gun_index:int, modifier:String, amo
 	if gun_type == "all":
 		for gun in gun_types:
 			for i in range(2):
-				gun_modifiers[gun_type][i][modifier] += amount
+				gun_modifiers[gun][i][modifier] += amount
 	else:
 		gun_modifiers[gun_type][gun_index][modifier] += amount
 		
@@ -635,9 +635,9 @@ func apply_temp_effect_upgrade(gun_type:String, gun_index:int, modifier:String, 
 			for i in range(2):
 				var m_dict:Dictionary = bullet_modifiers[gun_type][i]["bullet_temp_effects"]
 				if m_dict.get(modifier):
-					bullet_modifiers[gun_type][i]["bullet_temp_effects"][modifier] += amount
+					bullet_modifiers[gun][i]["bullet_temp_effects"][modifier] += amount
 				else:
-					bullet_modifiers[gun_type][i]["bullet_temp_effects"][modifier] = amount
+					bullet_modifiers[gun][i]["bullet_temp_effects"][modifier] = amount
 	else:
 		var m_dict:Dictionary = bullet_modifiers[gun_type][gun_index]["bullet_temp_effects"]
 		if m_dict.get(modifier):
@@ -652,9 +652,9 @@ func apply_perm_effect_upgrade(gun_type:String, gun_index:int, modifier:String, 
 			for i in range(2):
 				var m_dict:Dictionary = bullet_modifiers[gun_type][i]["bullet_perm_effects"]
 				if m_dict.get(modifier):
-					bullet_modifiers[gun_type][i]["bullet_perm_effects"][modifier] += amount
+					bullet_modifiers[gun][i]["bullet_perm_effects"][modifier] += amount
 				else:
-					bullet_modifiers[gun_type][i]["bullet_perm_effects"][modifier] = amount
+					bullet_modifiers[gun][i]["bullet_perm_effects"][modifier] = amount
 	else:
 		var m_dict:Dictionary = bullet_modifiers[gun_type][gun_index]["bullet_perm_effects"]
 		if m_dict.get(modifier):

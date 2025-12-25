@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddql4nnsmqxa1"]
+
+[ext_resource type="PackedScene" uid="uid://btb0nb7hv05wc" path="res://Scenes/Player Scenes/Player.tscn" id="1_fi1yh"]
+[ext_resource type="Script" uid="uid://c2c0uukmnmaga" path="res://Scenes/upgrader.gd" id="2_2nsi2"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_fi1yh")]
+
+[node name="Upgrader" type="Node2D" parent="."]
+script = ExtResource("2_2nsi2")
+
+[node name="Button" type="Button" parent="Upgrader"]
+offset_left = 115.0
+offset_top = -61.0
+offset_right = 153.0
+offset_bottom = -30.0
+text = "test"
+
+[connection signal="button_down" from="Upgrader/Button" to="Upgrader" method="_on_button_button_down"]

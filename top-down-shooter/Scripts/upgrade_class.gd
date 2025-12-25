@@ -2,8 +2,8 @@ extends Node2D
 
 class_name Upgrade
 
-var gun_type:String
-var gun_index:int
+var gun_type:String = "all"
+var gun_index:int = 0
 var upgrades_to_gun_stats:Dictionary = {}
 var upgrades_to_bullet_stats:Dictionary = {}
 var upgrades_to_bullet_temp_effects:Dictionary = {}
@@ -21,8 +21,13 @@ func _process(delta: float) -> void:
 
 func apply_upgrades() -> void:
 	for key in upgrades_to_bullet_stats.keys():
-		player_guns_handler.upgrade_bullet_stat.emit()
+		player_guns_handler.upgrade_bullet_stat.emit(gun_type, gun_index, key, upgrades_to_bullet_stats[key])
+	
+	for key in upgrades_to_gun_stats.keys():
+		player_guns_handler.upgrade_gun_stat.emit(gun_type, gun_index, key, upgrades_to_gun_stats[key])
 		
-	player_guns_handler.upgrade_gun_stat.emit()
-	player_guns_handler.upgrade_bullet_temp_effect.emit()
-	player_guns_handler.upgrade_bullet_perm_effect.emit()
+	for key in upgrades_to_bullet_temp_effects.keys():
+		player_guns_handler.upgrade_bullet_temp_effect.emit(gun_type, gun_index, key, upgrades_to_bullet_temp_effects[key])
+	
+	for key in upgrades_to_bullet_perm_effects.keys():
+		player_guns_handler.upgrade_bullet_perm_effect.emit(gun_type, gun_index, key, upgrades_to_bullet_perm_effects[key])
